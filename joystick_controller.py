@@ -19,8 +19,8 @@
 # MQTT_BROKER    = "mqtt-dashboard.com"
 # MQTT_USER      = ""
 # MQTT_PASSWORD  = ""
-# MQTT_TOPICS     = [b"TAFE/i-hess/joystick-inputs"]
-# MQTT_TOPIC_TARGET1    = "TAFE/i-hess/joystick-inputs"
+# MQTT_TOPICS     = [b"TAFE/i-hess/joystick-outputs"]
+# MQTT_TOPIC_TARGET1    = "TAFE/i-hess/joystick-outputs"
 
 
 # client = None
