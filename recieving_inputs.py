@@ -20,10 +20,34 @@ def on_message(client, userdata, msg):
     MESSAGE = re.sub(r"[\[\]\']", '', MESSAGE)
 
     # Turn spaces into = or nothing to seperate into words
-    # MESSAGE = re.sub(r' {2}', '=', MESSAGE)
-    # MESSAGE = re.sub(r' {1}', '', MESSAGE)
+    MESSAGE = re.sub(r' {1}', '=', MESSAGE)
 
-    print(MESSAGE)
+    MESSAGE_SPLIT = re.split(r'={1,2}', MESSAGE)
+
+    xAxis = int(MESSAGE_SPLIT[0])
+    yAxis = int(MESSAGE_SPLIT[1])
+
+    #Still
+    if xAxis > 47000 and xAxis < 49000 and yAxis > 49000 and yAxis < 51000:
+        print("Still")
+
+    #Moving forward right
+    elif xAxis == 65535 and yAxis == 65535:
+        print(">^")
+    
+    #Moving forward left 
+    elif xAxis == 65535 and yAxis >= 304 and yAxis < 65535:
+        print("<^")
+
+    #Moving backward right
+    elif xAxis >= 304 and xAxis < 65535 and yAxis == 65535:
+        print(">v")
+        
+    #Moving backward left
+    elif xAxis >= 304 and xAxis < 65535 and yAxis >= 304 and yAxis < 65535:
+        print("<v")
+
+
 
 
 
